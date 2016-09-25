@@ -1,0 +1,424 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="msapplication-config" content="none" />
+    <meta name="referrer" content="origin">
+    <title>Anmelden - ImmobilienScout24</title>
+    <link rel="stylesheet" type="text/css" href="//www.static-immobilienscout24.de/fro/core/2.3.0/css/core.min.css" />
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <link rel="stylesheet" type="text/css" href="//www.static-immobilienscout24.de/fro/core/2.3.0/css/core_no-mq.min.css" />
+    <![endif]-->
+    <link href="/resources/css/sso.min.css" rel="stylesheet" charset=UTF-8 />
+    <script src="//www.static-immobilienscout24.de/fro/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/resources/js/sso.js"></script>
+
+
+    <script>
+        var reportingHost = "https://sso.immobilienscout24.de";
+        $(document).ready(function() {
+            $(IS24).ready(function() {
+                IS24.SSO.reportSecurityEvent();
+            });
+        });
+    </script>
+
+
+
+    <script type="text/javascript" id="ets" src="https://tracking.immobilienscout24.de/tr.js?cP--svc_consumer_ftr=meinkontodropdown-login&cP--svc_consumer_sso=is24main&cP--svc_module_name=sso&customCounterName=is24.de.sso.login"></script>
+
+
+
+
+</head>
+
+<body>
+<div class="viewport">
+    <div class="page-wrapper">
+
+        <style scoped>
+            /*
+         * Additional Styles for the White Header
+         */
+            .sso-login__link--logged-in {
+                display: none;
+            }
+            .sso-login--logged-in .sso-login__link--logged-out {
+                display: none;
+            }
+            .sso-login--logged-in .sso-login__link--logged-in {
+                display: block;
+            }
+            .page-header--white--2016 {
+                border-bottom: 1px solid #e0e0e0;
+            }
+            .page-header__brand {
+                font-weight: normal;
+                color: #747474;
+            }
+        </style>
+
+        <header class="page-header page-header--white page-header--white--composite page-header--white--2016 content-wrapper-container" role="banner">
+            <div class="clearfix content-wrapper vertical-center-container" data-cms-qa="is24-cms-page-header-logo" style="position: relative;">
+                <div class="float-left">
+                    <a href="//www.immobilienscout24.de" class="page-header__logo vertical-center" title="ImmobilienScout24" aria-label="ImmobilienScout24">
+                        <img alt="ImmobilienScout24" src="//www.immobilienscout24.de/etc/designs/is24/img/logo.svg" onerror="this.src='/etc/designs/is24/img/logo.png';this.onerror=null;">
+                    </a>
+                    <span class="palm-hide page-header__brand vertical-center font-s" data-cms-qa="is24-cms-page-header-brand">
+                Der Marktführer:<br/>Die Nr. 1 rund um Immobilien</span>
+                </div>
+
+                <div class="float-right vertical-center-container">
+                </div>
+            </div>
+        </header>
+
+        <script type="text/javascript">
+            var IS24=IS24||{};IS24.STATIC=IS24.STATIC||{},function(){"use strict";var a={hasClass:function(a,b){var c,d;if(a&&b)// makes sure all class names are padded by single white spaces
+                return c=(" "+a.className+" ").replace(/\s+/g," "),d=new RegExp("\\s"+b+"\\s","g"),!!c.match(d)},addClass:function(a,b){var c=this.hasClass(a,b);c||(a.className+=" "+b)},/*
+             * @returns obj { hostAndPath: string, search: string, hash: string }
+             * query and fragment are called "search" and "hash" for compatibility with window.location
+             */
+                resolveURLString:function(a){var b=a.indexOf("?")!==-1,c=a.indexOf("#")!==-1;return{hostAndPath:b?a.split("?")[0]:a.split("#")[0],search:b?a.substring(a.indexOf("?")).split("#")[0]:"",hash:c?a.substring(a.indexOf("#")):""}},/*
+                 * Attaches an arbitrary number of URL parameters to the href attribute of an element, overwrites previous occurrences
+                 * @argument DOMElement element
+                 * @argument obj parametersToAdd { parameterName: parameterValue }
+                 */
+                attachLinkParameters:function(a,b){var c,d,e,f,g,h,i,j,k=/[^\w\-\s.,+%@&="\[\]]/g,l={},m={},n=[];if(a&&a.href&&"object"==typeof b){
+// sanitize input
+                    for(j in b)b.hasOwnProperty(j)&&(c=j.replace(k,""),d=b[j].replace(k,""),l[c]=d);
+// turn existing parameters into key/value pairs for compatibility with new parameters
+                    for(
+// resolve href, separate parameters
+                            e=this.resolveURLString(a.href),f=e.search?e.search.substring(1).split("&"):[],i=0;i<f.length;i++)g=f[i].split("="),m[g[0]]=g[1];
+// add new parameters, overwrite previous values
+                    for(j in l)l.hasOwnProperty(j)&&(m[j]=l[j]);
+// turn back into array for easier stringification
+                    for(j in m)m.hasOwnProperty(j)&&n.push(j+"="+m[j]);
+// stringify
+                    h="?"+n.join("&"),
+// insert
+                            a.href=e.hostAndPath+h+e.hash}},hasNecessaryDOMAPIs:function(a){var b,c=!0;for(b=0;b<a.length;b++)if(!(a[b]in window||a[b]in document||a[b]in document.body)){c=!1;break}return c},findMatchingMapping:function(b){var c,d,e={".sandbox-immobilienscout24.de":{ssoDomain:"sso.sandbox-immobilienscout24.de",wwwDomain:"www.sandbox-immobilienscout24.de"}};for(c in e)if(a.stringEndsWith(b,c)){d=e[c];break}return d},stringEndsWith:function(a,b){var c=a.indexOf(b);return c!==-1&&c===a.length-b.length}};IS24.STATIC.helpers=IS24.STATIC.helpers||{},
+// Public helpers for unit test mocking
+                    IS24.STATIC.helpers.loadScript=function(a,b){var c=document.createElement("script");c.type="text/javascript",c.src=a,b&&"undefined"!=typeof b.async&&(c.async=b.async),b&&"undefined"!=typeof b.defer&&(c.defer=b.defer),document.getElementsByTagName("head")[0].appendChild(c)},IS24.STATIC.helpers.getLocation=function(){return window.location},/*
+             * SSO Login Status
+             * Appends SSO parameters, checks for login status, inserts account name
+             * Searches document for links with the ".sso-login-link" class.
+             *
+             * To be inlined in header markup snippet.
+             */
+                    IS24.STATIC.sso=function(){function b(a){var b=a;return"sso.immobilienscout24.de"!==m&&(b=a.replace("sso.immobilienscout24.de",m)),b}function c(a){var b=a;return"www.immobilienscout24.de"!==l&&(b=a.replace("www.immobilienscout24.de",l)),b}function d(a){var d=a.href;m&&l&&(d=b(d),d=c(d)),a.href!==d&&(a.href=d)}function e(b){var c,e,f,g=document.querySelectorAll(".sso-login-link"),h="sso-login-link--no-parameters",i=encodeURIComponent(b.ssoReturnUrl),j=encodeURIComponent(b.ssoAppName);for(f=0;f<g.length;f++)c=g[f].href.indexOf("sso_return")>-1,e=!a.hasClass(g[f],h),e&&(
+// skip the return URL if one is already specified to preserve the desired target page
+                            c?a.attachLinkParameters(g[f],{appName:j}):a.attachLinkParameters(g[f],{sso_return:i,appName:j})),
+// if not on the production stage, rewrite default host names
+                            d(g[f])}/* Fix for a layout bug that will occur in IE 9-11 when image fails to load. The outline forces a redraw of the container.
+                     * (Without this fix, IE would draw the container as a rectangle despite its border radius, which results in a white rectangle with a transparent circle where the image should be.) */
+                        function f(a){a.addEventListener&&a.addEventListener("error",function(){a.style.outline="1px solid transparent"})}function g(a,b){var c=document.createElement("img");c.src=b.imgURL,c.alt=b.userName,f(c),// attach error handler to fix layout bug in IE
+                                a.appendChild(c)}function h(a,b){var c,d=a.length;for(c=0;c<d;c++)g(a[c],b)}function i(b){var c=document.querySelector(".sso-login"),d=document.querySelectorAll(".sso-login__user-name"),e=document.querySelectorAll(".topnavigation__sso-login__user-avatar"),f="sso-login--logged-in",g="sso-login--show-avatar";if(b&&c){
+// insert user name if logged in
+                            if(b.userName&&d){for(var i=0;i<d.length;i++)d[i].innerHTML=b.userName;a.addClass(c,f)}
+// insert user avatar image regardless of whether the user is logged in (API will send dummy image if not logged in)
+                            b.imgURL&&e.length>0&&(h(e,b),a.addClass(c,g))}}function j(b){var// cache killer
+                                c,d,e=Math.round((new Date).getTime()/1e3);return c=a.findMatchingMapping(IS24.STATIC.helpers.getLocation().hostname),d=c?c.wwwDomain:"www.immobilienscout24.de","https://"+d+"/meinkonto/api/v1/jsonp/headerInfo?callback="+b+"&ts="+e}function k(){var b,c={ssoReturnUrl:IS24.ssoReturnUrl||IS24.STATIC.helpers.getLocation().href,ssoAppName:IS24.ssoAppName||"is24main"};b=a.findMatchingMapping(IS24.STATIC.helpers.getLocation().hostname),l=b?b.wwwDomain:void 0,m=b?b.ssoDomain:void 0,e(c),IS24.STATIC.helpers.loadScript(j("IS24.STATIC.sso.jsonpCallback"),{async:!0,defer:!0})}var l,m;return{updateLoginStatus:k,jsonpCallback:i}}(),/*
+             * Last Search Notification
+             * Checks Search Controller for a last search and shows a notification along with an optional "save this search" teaser.
+             * When hovered, removes notification. When search has been saved, removes teaser.
+             *
+             * To be inlined in header markup.
+             */
+                    IS24.STATIC.lastSearchNotification=function(){
+// --- Local Storage State ---
+                        function b(){return localStorage[J]?JSON.parse(localStorage[J]):{}}function c(a){localStorage[J]=JSON.stringify(a)}function d(){try{return localStorage.setItem("localStorageAvailable",1),localStorage.removeItem("localStorageAvailable"),!0}catch(a){return!1}}function e(a,d){var e=b();e[a]=d,c(e)}function f(a){e("hideNotification",a)}function g(a){e("hideTeaser",a)}function h(){f(!1),g(!1)}function i(a){e("saveSearchLink",a)}
+// --- Notifications ---
+                        function j(){var a;for(a=0;a<E.length;a++)E[a].style.display="inline-block"}function k(){function a(a){window.setTimeout(function(){a.style.display="none"},c)}var// this duration corresponds to the CSS transition duration set in the elements' style attributes
+                                b,c=300;for(b=0;b<E.length;b++)E[b].style.opacity="0",// opacity allows for CSS animations
+                                a(E[b])}
+// --- Notifications - Event Handlers ---
+                        function l(a){
+// fire only if the cursor is no longer anywhere inside the account tab
+                            D.contains(a.relatedTarget)||(k(),D.removeEventListener("mouseout",l))}
+// add mouseout event listener only after the tab has been hovered for a bit to give people a chance to actually notice the notification
+                        function m(){function a(){D.addEventListener("mouseout",function(a){D.contains(a.relatedTarget)||window.clearTimeout(b)}),b=window.setTimeout(function(){f(!0),// set flag immediately in case the user jumps away before tab is unhovered
+                                D.addEventListener("mouseout",l),// attach the actual listener
+                                D.removeEventListener("mouseover",a)},c)}var b,c=500;D.addEventListener("mouseover",a)}function n(){function a(b){D.contains(b.target)||(k(),document.body.removeEventListener("touchstart",a))}function b(){f(!0),// set flag immediately in case the user jumps away before tab is unhovered
+                                document.body.addEventListener("touchstart",a),D.removeEventListener("touchstart",b)}D.addEventListener("touchstart",b)}function o(){m(),n()}
+// --- "Save Search" Teaser ---
+// clip text at approximately two lines
+                        function p(a){var b=40,c=a;return c.length>b&&(c=c.substring(0,b-3)+"&hellip;"),c}
+// remove default SSO segmentation parameter to avoid conflicts
+                        function q(a){var b=a.indexOf("&source=");return b!==-1&&(a=a.substring(0,b)),a}function r(a){H.href=q(a.saveSearchLink)+"&source=search_meinkontodropdown-lastsearch",G.innerHTML=p(a.lastSearch)}function s(){F.style.display="block",a.addClass(C,"topnavigation__notification--present")}
+// --- "Save Search" Teaser - Event Handlers ---
+                        function t(){g(!0)}function u(a){var b,c=a.currentTarget;t(),// fire click handler regardless of tracking
+                        window.IS24&&IS24.TEALIUM&&window.utag&&(
+// fire delayed to avoid losing the tracking request on window change.
+// ("IS24.TEALIUM.listener.link" method already does this, but is not officially documented and might not be available forever.)
+                                a.preventDefault(),b=JSON.parse(c.getAttribute("data-tracking")),IS24.TEALIUM.tracking.report(b),// this method doesn't take a callback, so we can't expedite the window change if the tracking request finishes faster
+                                        window.setTimeout(function(){window.open(c.href,c.getAttribute("target"))},200))}function v(){H.addEventListener("click",u),H.addEventListener("keyup",function(a){13===a.keyCode&&u()})}function w(a){F&&(v(),r(a),s())}function x(a){var c=b();a.lastSearchAvailable&&a.saveSearchLink&&(
+// the user has made a search, and there is a URL through which to save it (which is not always the case) ...
+                                a.saveSearchLink!==c.saveSearchLink&&(
+// ... it is a new search, so the user hasn't gotten any kind of notification for it
+                                        h(),i(a.saveSearchLink)),c.hideTeaser||
+// the user has not yet saved the search ...
+                                w(a),c.hideNotification||(
+// ... and not yet hovered over the account tab
+                                        o(),j()))}function y(a){var b,c=a.target;200===c.status&&(b=JSON.parse(c.responseText),x(b))}function z(){var b,c;return b=a.findMatchingMapping(IS24.STATIC.helpers.getLocation().hostname),c=b?b.wwwDomain:"www.immobilienscout24.de","//"+c+I}function A(a){var b=new XMLHttpRequest;b.addEventListener("loadend",a),b.open("get",z()),b.send()}function B(){a.hasNecessaryDOMAPIs(["XMLHttpRequest","addEventListener","JSON","getElementsByClassName","localStorage"])&&d()&&(C=document.getElementsByClassName("topnavigation")[0],D=document.getElementsByClassName("topnavigation__sso-login")[0],D&&(E=document.getElementsByClassName("topnavigation-last-search-notification"),F=D.getElementsByClassName("topnavigation-last-search-teaser")[0],F&&(G=F.getElementsByClassName("topnavigation-last-search-notification__search-label")[0],H=F.getElementsByClassName("topnavigation-last-search-notification__save-button")[0])),D&&E.length>0&&A(y))}var C,D,E,F,G,H,I="/Suche/controller/lastSearch",J="topNavigationLastSearchNotification";return{init:B}}()}();</script>
+        <script type="text/javascript">
+            (function () {
+                function initializeLoginBox() {
+                    if (window.IS24 && IS24.STATIC) {
+                        if (IS24.STATIC.sso && IS24.STATIC.sso.updateLoginStatus) {
+                            IS24.STATIC.sso.updateLoginStatus();
+                        }
+                    }
+                }
+
+                if (document.readyState === "interactive" || document.readyState === "complete") {
+                    // execute immediately if DOMContentLoaded has already fired
+                    // this is a fallback for applications which load the header asynchronously and need to execute this script after DOM Ready
+                    initializeLoginBox();
+                } else {
+                    if ("addEventListener" in document) {
+                        document.addEventListener("DOMContentLoaded", function () {
+                            initializeLoginBox();
+                        });
+                    } else if ("attachEvent" in document) {
+                        document.attachEvent("onreadystatechange", function () {
+                            if (document.readyState === "complete") {
+                                initializeLoginBox();
+                            }
+                        });
+                    }
+                }
+            }());
+        </script>
+
+
+        <div class="content-wrapper">
+
+
+
+
+
+
+
+
+
+
+            <script src="/resources/js/3156750129.js"></script>
+
+
+
+            <script type="application/javascript">
+                $(document).ready(function () {
+                    if ($("#registerSwitch").is(":checked")) {
+                        window.optimizely.push(["activate", 5685050037]);
+                    }
+                    $("#registerSwitch").on("click", function () {
+                        if ($(this).is(":checked")) {
+                            window.optimizely.push(["activate", 5685050037]);
+                        }
+                    });
+                });
+            </script>
+
+
+            <script type="application/javascript">
+                $(document).ready(function () {
+                    $(".button-primary").click(function (e) {
+                        $(".button-primary").attr('disabled', 'disabled');
+                        e.preventDefault();
+                        $("form").submit();
+                    });
+                });
+            </script>
+
+            <div id="main">
+                <h1 id="loginOrRegistrationPage" class="font-m font-normal padding-vertical-m">Anmelden oder kostenlos registrieren</h1>
+                <div id="grid" class="grid gutter-l">
+                    <div class="grid-item one-half palm-one-whole">
+                        <form id="loginForm" class="form form-theme-standard" action="/sso/login?appName=is24main&amp;source=meinkontodropdown-login&amp;sso_return=https%3A%2F%2Fwww.immobilienscout24.de%2Fsso%2Flogin.go%3Fsource%3Dmeinkontodropdown-login%26returnUrl%3D%2Fgeschlossenerbereich%2Fstart.html%3Fsource%253Dmeinkontodropdown-login" method="post">
+
+                            <input id="tokenMapt1474805084153" name="tokenMap[t1474805084153]" readonly="true" type="hidden" value="80be154a-fbb6-4ea5-9402-29be83c02291"/>
+
+
+
+
+
+
+
+
+
+                            <fieldset class="grid padding-top-s">
+                                <div class="grid-item">
+                                    <label for="registerSwitch">
+                                        <input id="registerSwitch" name="registerSwitch" type="checkbox" value="true"/><input type="hidden" name="_registerSwitch" value="on"/>
+                                        <span>Neu bei ImmobilienScout24</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+
+
+                                <div class="grid-item one-whole margin-bottom-m">
+                                    <div class="grid">
+                                        <label for="j_username" id="username" class="grid-item palm-hide">
+                                            <span class="login">E-Mail oder Benutzername</span>
+                                            <span class="register hide">E-Mail</span>
+                                        </label>
+                                        <input id="j_username" name="username" class="input-text grid-item initialFocus" autocorrect="off" data-placeholder="E-Mail" spellcheck="false" placeholder="E-Mail oder Benutzername" autocapitalize="off" type="text" value="" autocomplete="off"/>
+                                    </div>
+                                </div>
+                                <div class="grid-item one-whole margin-bottom-m">
+                                    <div class="grid">
+                                        <label for="j_password" class="grid-item palm-hide">
+                                            Passwort
+                                        </label>
+                                        <input id="j_password" name="password" data-placeholder="Passwort (5-40 Zeichen)" placeholder="Passwort" class="input-text grid-item" type="password" value=""/>
+                                    </div>
+                                </div>
+                                <div class="grid-item one-whole margin-bottom-m register hide">
+                                    <div class="grid">
+                                        <label for="confirmPassword" class="grid-item palm-hide">
+                                            Passwort wiederholen
+                                        </label>
+                                        <input id="confirmPassword" name="confirmPassword" class="input-text grid-item" placeholder="Passwort wiederholen" type="password" value=""/>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="grid-item margin-bottom-m register hide">
+                                    <input id="dataProtectionAcceptance" name="dataProtectionAcceptance" data-event="evtrack" class="input-checkbox" data-tracking="{&quot;evt_checked&quot;:&quot;false&quot;,&quot;ns_type&quot;:&quot;hidden&quot;}" type="checkbox" value="true"/><input type="hidden" name="_dataProtectionAcceptance" value="on"/>
+                                    <label for="dataProtectionAcceptance" class="label-checkbox nine-tenths"  cssErrorClass="error">
+                                        Ich stimme der
+                                        <a class="icon-arrow" href="http://www.immobilienscout24.de/agb/datenschutz/Datenschutzeinwilligung/" target="tracks">Datenschutzeinwilligung</a>
+                                        von ImmobilienScout24 zu.
+                                    </label>
+                                </div>
+
+
+                                <div class="grid-item margin-bottom-m">
+                                    <button id="registration.submit" class="button-primary font-m one-whole" type="submit" value="Submit">
+                                        <span class="register hide">Registrieren</span>
+                                        <span class="login">Anmelden</span>
+                                    </button>
+                                </div>
+                                <div class="grid login">
+                                    <div class="grid-item padding-top-l padding-bottom-m one-half">
+                                        <label for="rememberMe">
+                                            <input id="rememberMe" name="rememberMe" checked="checked" type="checkbox" value="true" checked="checked"/><input type="hidden" name="_rememberMe" value="on"/>
+                                            Angemeldet bleiben
+                                        </label>
+                                    </div>
+                                    <div class="grid-item padding-top-l padding-bottom-m one-half align-right">
+                                        <a class="icon-arrow" href="/sso/forgotPassword?appName=is24main&source=meinkontodropdown-login&sso_return=https%3A%2F%2Fwww.immobilienscout24.de%2Fsso%2Flogin.go%3Fsource%3Dmeinkontodropdown-login%26returnUrl%3D%2Fgeschlossenerbereich%2Fstart.html%3Fsource%253Dmeinkontodropdown-login" id="forgotPassword">Passwort vergessen?</a>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="grid" style="position: relative;">
+                                <p class="fieldset-headline">oder</p>
+                                <div class="grid-item">
+                                    <div class="grid margin-top-m">
+                                        <p style="height: 44px;">
+                                            <a href="https://www.facebook.com/v2.6/dialog/oauth?client_id=725356997489663&response_type=code&scope=email&redirect_uri=http%3A%2F%2Fsso.immobilienscout24.de%2Fsso%2Ffblogin%3FappName%3Dis24main%26source%3Dmeinkontodropdown-login%26sso_return%3Dhttps%253A%252F%252Fwww.immobilienscout24.de%252Fsso%252Flogin.go%253Fsource%253Dmeinkontodropdown-login%2526returnUrl%253D%252Fgeschlossenerbereich%252Fstart.html%253Fsource%25253Dmeinkontodropdown-login" id="facebookConnectButtonLinkLogin" class="facebookConnectButtonLinkLogin button-secondary font-m one-whole login" style="border: none; white-space: normal;" onclick="$(this).attr('disabled','disabled'); window.location=this.href;">
+                                                <span class="fa fa-facebook-square margin-right-s"></span> Mit Facebook anmelden
+                                            </a>
+                                            <a href="https://www.facebook.com/v2.6/dialog/oauth?client_id=725356997489663&response_type=code&scope=email&redirect_uri=http%3A%2F%2Fsso.immobilienscout24.de%2Fsso%2Ffblogin%3FappName%3Dis24main%26source%3Dmeinkontodropdown-login%26sso_return%3Dhttps%253A%252F%252Fwww.immobilienscout24.de%252Fsso%252Flogin.go%253Fsource%253Dmeinkontodropdown-login%2526returnUrl%253D%252Fgeschlossenerbereich%252Fstart.html%253Fsource%25253Dmeinkontodropdown-login" id="facebookConnectButtonLinkRegister" class="facebookConnectButtonLinkLogin button-secondary font-m one-whole register hide" style="border: none; white-space: normal;" onclick="$(this).attr('disabled','disabled'); window.location=this.href;">
+                                                <span class="fa fa-facebook-square margin-right-s"></span> Mit Facebook registrieren
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <input id="dpaVersion" name="dpaVersion" value="2" type="hidden" value=""/>
+                        </form>
+                    </div>
+                    <div class="grid-item one-half palm-one-whole">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="section title"><h3 class="  font-m">Einmal registrieren und leichter Ihre Wunschimmobilie suchen.</h3></div>
+                        <div class="section sourcecode"><span class="block" style="height:20px;"></span></div>
+                        <div class="margin-bottom-m parbase textimageflex section textimage"><div class="clearfix">
+                            <div class="text"><ul class="list-check list-spacing-xs">
+                                <li>Interessante Immobilien einfach <b>auf dem Merkzettel </b>abspeichern und jederzeit wieder abrufen.<br>
+                                </li>
+                            </ul>
+                                <p>&nbsp;</p>
+                                <ul class="list-check list-spacing-xs">
+                                    <li>Ihre <b>individuellen Suchen</b> speichern, verwalten und neueste Angebote per E-Mail und mobil erhalten.</li>
+                                </ul>
+                                <p>&nbsp;</p>
+                                <ul class="list-check list-spacing-xs">
+                                    <li>Alle Ihre wichtigen Unterlagen sicher an einem Ort in einer <b>digitalen Bewerbermappe </b>hinterlegen.</li>
+                                </ul>
+                            </div></div>
+                        </div>
+
+
+
+
+
+                        <div class="grid-item">
+                            <div class="padding-vertical-s gutter-horizontal-s">
+                                <div class="grid-item one-fifth">
+                                    <img class="ssl-logo" src="/resources/img/ssl-icon.png" />
+                                </div>
+                                <div class="grid-item four-fifths">
+                                    <h4 class="margin-top-xs">ImmobilienScout24 schützt Ihre Privatsphäre</h4>
+                                    <p>Ihre persönlichen Daten werden absolut vertraulich behandelt und keinesfalls unbefugt an Dritte weitergegeben.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <footer class="main-footer" data-cms-qa="page-footer">
+            <h6>Seiteninformationen</h6>
+            <ul>
+                <li><a href="https://www.immobilienscout24.de/kontakt/" title="Kontakt & Hilfe" aria-label="Kontakt & Hilfe" target="_blank">Kontakt & Hilfe</a></li>
+                <li><a href="//www.immobilienscout24.de/impressum.html" title="Impressum" aria-label="Impressum" target="_blank">Impressum</a></li>
+                <li><a href="//www.immobilienscout24.de/agb.html" title="AGB & Rechtliche Hinweise" aria-label="AGB & Rechtliche Hinweise" target="_blank">AGB & Rechtliche Hinweise</a></li>
+                <li><a href="//www.immobilienscout24.de/agb/verbraucherinformationen.html" title="Verbraucherinformationen" aria-label="Verbraucherinformationen" target="_blank">Verbraucherinformationen</a></li>
+                <li><a href="//www.immobilienscout24.de/agb/datenschutz.html" title="Datenschutz" aria-label="Datenschutz" target="_blank">Datenschutz</a></li>
+                <li><a href="//sicherheit.immobilienscout24.de" title="Sicherheit" aria-label="Sicherheit" target="_blank">Sicherheit</a></li>
+            </ul>
+            <p class="build-information">&copy; Copyright 1999 - 2016 Immobilien Scout GmbH</p>
+        </footer>
+
+    </div>
+</div>
+<div id="modalBackground" class="modal better-invisible"></div>
+</body>
+</html>
